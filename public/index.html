@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>ToDoer</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<meta name="google-signin-client_id" content="1088830501463-25rlge5brbc9min40a3u2bp155lgc0su.apps.googleusercontent.com">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body background="img/bg.jpg">
+<div align="right" class="g-signin2" data-onsuccess="onSignIn"></div>
+<a href="#" onclick="signOut();">Sign out</a>
+	<script>
+		function signOut() {
+			var auth2 = gapi.auth2.getAuthInstance();
+			auth2.signOut().then(function () {
+			console.log('User signed out.');
+		});
+		}
+	</script>
+	<div class="container">
+		<h2>
+			ToDoer
+			<i align="right" class="fa fa-plus"></i>
+		</h2>
+		<input style="display: none;" type="text" placeholder="Enter a To Do item">
+		<ul>
+		</ul>
+	</div>
+	<script type="text/javascript" src="js/func.js"></script>
+</body>
+</html>
